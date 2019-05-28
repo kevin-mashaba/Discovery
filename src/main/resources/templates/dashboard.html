@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="common/header :: common-header" />
+<body roleId="page-top" data-spy="scroll"
+	data-target=".navbar-fixed-top">
+<head th:replace="common/header :: navbar" />
+<div class="container main">
+	<div class="row">
+		<div class="col-lg-12"></div>
+		<!-- /.col-lg-12 -->
+	</div>
+	<!-- /.row -->
+	<div class="row">
+		<div class="col-lg-6 col-md-6">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<div class="row">
+						<div class="col-xs-6">
+							<!--<i class="fa fa-comments fa-5x"></i>-->
+							
+							<h2>Primary Balance:</h2>
+						</div>
+						<div class="col-xs-6 text-right">
+							<h1>
+								<i  aria-hidden="true"></i>R <span
+									th:text="${primaryAccount.accountBalance}">...</span>
+							</h1>
+						</div>
+					</div>
+						<div class="row">
+						<div class="col-xs-6">
+							<!--<i class="fa fa-comments fa-5x"></i>-->
+							<p>conversion rate:<span style="color:red;">11.6167</span> </p>
+							<!-- <h2>Primary Balance:</h2> -->
+						</div>
+						<div class="col-xs-6 text-right">
+							<h1>
+								<i  aria-hidden="true"></i>$ <span
+									th:text="${usd}">...</span>
+							</h1>
+						</div>
+					</div>
+						<div class="row">
+						<div class="col-xs-6">
+							<!--<i class="fa fa-comments fa-5x"></i>-->
+							<p>conversion rate:<span style="color:red;">8.818342</span> </p>
+							<!-- <h2>Primary Balance:</h2> -->
+						</div>
+						<div class="col-xs-6 text-right">
+							<h1>
+								<i  aria-hidden="true"></i>A$ <span
+									th:text="${aud}">...</span>
+							</h1>
+						</div>
+					</div>
+				</div>
+				<div >
+					<div class="panel-footer">
+						<h10 class="pull-left">Account Number: </h10> <p style="color:blue;" th:text="${primaryAccount.acountNumber}"></p> <span
+							class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+				<div th:if="${funds}">
+					<div>
+						<p>Insufficient Funds!</p>
+					</div>
+				</div>
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<div class="row">
+						<div class="col-xs-6">
+							<h2>Savings Balance:</h2>
+						</div>
+						<div class="col-xs-6 text-right">
+							<h1>
+								<i  aria-hidden="true"></i>R <span
+									th:text="${savingsAccount.accountBalance}">...</span>
+							</h1>
+						</div>
+					</div>
+						<div class="row">
+						<div class="col-xs-6">
+						<p>conversion rate:<span style="color:red;">11.6167</span> </p>
+							<!-- <h2>Savings Balance:</h2> -->
+						</div>
+						<div class="col-xs-6 text-right">
+							<h1>
+								<i  aria-hidden="true"></i>$ <span
+									th:text="${usdSavings}">...</span>
+							</h1>
+						</div>
+					</div>
+						<div class="row">
+						<div class="col-xs-6">
+						<p>conversion rate:<span style="color:red;">8.818342</span> </p>
+							<!-- <h2>Savings Balance:</h2> -->
+						</div>
+						<div class="col-xs-6 text-right">
+							<h1>
+								<i  aria-hidden="true"></i>A$ <span
+									th:text="${audSavings}">...</span>
+							</h1>
+						</div>
+					</div>
+				</div>
+				<div>
+					<div class="panel-footer">
+						<h10 class="pull-left">Account Number: </h10> <p style="color:blue;" th:text="${savingsAccount.accountNumber}"></p>  <span
+							class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<div class="row">
+						<div class="col-xs-6">
+							<h2>Credit Card Balance:</h2>
+						</div>
+						<div class="col-xs-6 text-right">
+							<h1>
+								<i  aria-hidden="true"></i>R <span
+									th:text="${creditCard.accountBalance}">...</span>
+							</h1>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-6">
+					<p>conversion rate:<span style="color:red;">11.6167</span> </p>
+						
+							<!-- <h2>Credit Card Balance:</h2> -->
+						</div>
+						<div class="col-xs-6 text-right">
+							<h1>
+								<i  aria-hidden="true"></i>$ <span
+									th:text="${usdCredit}">...</span>
+							</h1>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-6">
+				<p>conversion rate:<span style="color:red;">8.818342</span> </p>
+						
+							<!-- <h2>Credit Card Balance:</h2> -->
+						</div>
+						<div class="col-xs-6 text-right">
+							<h1>
+								<i  aria-hidden="true"></i>A$ <span
+									th:text="${audCredit}">...</span>
+							</h1>
+						</div>
+					</div>
+				</div>
+				<div>
+					<div class="panel-footer">
+						<h10 class="pull-left">Account Number: </h10> <p style="color:blue;" th:text="${creditCard.accountNumber}"></p>  <span
+							class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-lg-3 col-md-6">
+			<div class="panel panel-yellow">
+				<div class="panel-heading">
+					<div class="row">
+						<div class="col-xs-3">
+							<i class="fa fa-credit-card fa-5x"></i>
+						</div>
+						<div class="col-xs-9 text-right">
+							<div>Deposit</div>
+						</div>
+					</div>
+				</div>
+				<a th:href="@{/account/deposit}">
+					<div class="panel-footer">
+						<span class="pull-left">Deposit</span> <span
+							class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+						<div class="clearfix"></div>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-6">
+			<div class="panel panel-red">
+				<div class="panel-heading">
+					<div class="row">
+						<div class="col-xs-3">
+							<i class="fa fa-money fa-5x"></i>
+						</div>
+						<div class="col-xs-9 text-right">
+							<div>Withdraw</div>
+						</div>
+					</div>
+				</div>
+				<a th:href="@{/account/withdraw}">
+					<div class="panel-footer">
+						<span class="pull-left">Withdraw</span> <span
+							class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+						<div class="clearfix"></div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	<!-- /.row -->
+
+
+</div>
+
+
+<div th:replace="common/header :: body-bottom-scripts" />
+
+</body>
+</html>
